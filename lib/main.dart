@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whats_my_app/result_page.dart';
 import 'package:whats_my_app/welcome_page.dart';
 
 void main() {
@@ -10,10 +11,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: WelcomePage.id,
-      routes: {
-        WelcomePage.id: (context) => WelcomePage(),
-      },
+      home: WelcomePage(),
     );
   }
+}
+
+Route createRoute(String routeName) {
+  return PageRouteBuilder(
+      pageBuilder: (context, animation, secondaryAnimation) => ResultPage(),
+      transitionsBuilder: (context, animation, secondaryAnimation, child) {
+        return child;
+      });
 }
