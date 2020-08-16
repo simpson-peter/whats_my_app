@@ -10,9 +10,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        body: WelcomePage(),
-      ),
+      initialRoute: WelcomePage.id,
+      routes: {
+        WelcomePage.id: (context) => WelcomePage(),
+      },
     );
   }
 }
