@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whats_my_app/welcome_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: WelcomePage(title: 'Flutter Demo Home Page'),
+      home: Scaffold(
+        body: WelcomePage(),
+      ),
     );
   }
 }
