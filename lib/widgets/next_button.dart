@@ -4,7 +4,8 @@ import 'package:whats_my_app/constants.dart';
 class NextButton extends StatelessWidget {
   final String label;
   final Function onPress;
-  NextButton({@required this.label, @required this.onPress});
+  final double opacity;
+  NextButton({@required this.label, @required this.onPress, this.opacity = 1});
 
   @override
   Widget build(BuildContext context) {
