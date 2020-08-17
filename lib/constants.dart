@@ -12,8 +12,8 @@ const List<List<Color>> kBackgroundColors = [
 ];
 
 const List<String> kFirstPhraseList = [
-  'Voy'
-      'Tranquil',
+  'Voy',
+  'Tranquil',
   'Abilli',
   'Tur',
   'e-',
@@ -38,8 +38,8 @@ const List<String> kSecondPhraseList = [
   'dack',
   'ify',
   'ibillity',
-  'ility'
-      'ero',
+  'ility',
+  'ero',
   'ickr',
   'iz',
   'ado',
@@ -51,7 +51,7 @@ const List<String> kSecondPhraseList = [
   'adir',
   'ter',
   'ster',
-  'der'
-      'dex',
+  'der',
+  'dex',
   '',
 ];
