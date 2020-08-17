@@ -37,12 +37,24 @@ class _ResultPageState extends State<ResultPage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          'Your App Is Named...',
-          style: kDisplayTextStyle,
+          '"' + getElementFromList(kIntroPhrases) + '"',
+          style: kDisplayTextStyle.copyWith(
+            fontWeight: FontWeight.normal,
+            fontStyle: FontStyle.italic,
+            fontSize: 25,
+          ),
+        ),
+        SizedBox(
+          height: 20,
         ),
         Text(
           getAppName(),
-          style: kDisplayTextStyle,
+          style: kDisplayTextStyle.copyWith(
+            fontSize: 60,
+          ),
+        ),
+        SizedBox(
+          height: 20,
         ),
         NextButton(
           label: 'Give Me Another!',

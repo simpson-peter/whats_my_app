@@ -55,3 +55,13 @@ const List<String> kSecondPhraseList = [
   'dex',
   '',
 ];
+
+const List<String> kIntroPhrases = [
+  'Next up at TechCrunch Disrupt:',
+  'Yeah so I\'ll ask my dad for money to start...',
+  'iOS App Store\'s hottest new item:',
+  'How does this sound?',
+  'I went on a vision quest and came up with...',
+  'Every VC this side of the Prime Meridian is talking about...',
+  'What\'s up YouTube it\'s ReviewGuy1200 and I\'m here to talk about...',
+];
