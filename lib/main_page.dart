@@ -41,7 +41,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     Provider.of<SiteData>(context).controller = AnimationController(
-      duration: Duration(milliseconds: 3000),
+      duration: Duration(milliseconds: 2000),
       vsync: this,
       lowerBound: 0.0,
       upperBound: 1.0,

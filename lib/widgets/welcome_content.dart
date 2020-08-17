@@ -25,45 +25,53 @@ class _WelcomeContentState extends State<WelcomeContent> {
   final bool showButtonVisible = false;
 
   @override
+  void initState() {}
+
+  @override
   Widget build(BuildContext context) {
+    //Initialize important animation info for subtitle fade-in
     final Animation animation = Tween(
       begin: 0.0,
       end: 1.0,
     ).animate(Provider.of<SiteData>(context).controller);
     TextStyle welcomeTextStyle = kDisplayTextStyle;
     Provider.of<SiteData>(context).controller.forward();
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        TypewriterAnimatedTextKit(
-          speed: animationDuration,
-          totalRepeatCount: 1,
-          text: ['What\'s My App?'],
-          textStyle: welcomeTextStyle,
-        ),
-        SizedBox(
-          height: 10,
-        ),
-        FadeTransition(
-          opacity: animation,
-          child: Text(
-            '"Dude, I\'m offering you a chance to get in on the ground floor..."',
-            style: welcomeTextStyle.copyWith(
-              fontWeight: FontWeight.w100,
-              fontSize: 20,
-              fontStyle: FontStyle.italic,
+
+    //Return the build widget representing the welcome message and action button which loads results
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TypewriterAnimatedTextKit(
+            speed: animationDuration,
+            totalRepeatCount: 1,
+            text: ['What\'s My App?'],
+            textStyle: welcomeTextStyle,
+          ),
+          SizedBox(
+            height: 10,
+          ),
+          FadeTransition(
+            opacity: animation,
+            child: Text(
+              '"Dude, I\'m offering you a chance to get in on the ground floor..."',
+              style: welcomeTextStyle.copyWith(
+                fontWeight: FontWeight.w100,
+                fontSize: 20,
+                fontStyle: FontStyle.italic,
+              ),
             ),
           ),
-        ),
-        SizedBox(
-          height: 20,
-        ),
-        NextButton(
-          label: 'Find Out',
-          onPress: widget.onButtonPress,
-        ),
-      ],
+          SizedBox(
+            height: 20,
+          ),
+          NextButton(
+            label: 'Find Out',
+            onPress: widget.onButtonPress,
+          ),
+        ],
+      ),
     );
   }
 }

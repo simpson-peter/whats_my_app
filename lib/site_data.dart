@@ -5,6 +5,9 @@ class SiteData extends ChangeNotifier {
   //Controller responsible for manipulating _animatorValue
   AnimationController controller;
 
+  //Holds the upcoming animation
+  Animation<Offset> offsetAnimation;
+
   //bool tracking if the intro page should be loaded
   bool _inIntro = true;
 
