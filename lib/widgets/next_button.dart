@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:whats_my_app/constants.dart';
-import 'package:whats_my_app/main.dart';
-import 'package:whats_my_app/result_page.dart';
 
 class NextButton extends StatelessWidget {
   final String label;
-  NextButton({@required this.label});
+  final Function onPress;
+  NextButton({@required this.label, @required this.onPress});
 
   @override
   Widget build(BuildContext context) {
@@ -13,9 +12,7 @@ class NextButton extends StatelessWidget {
       splashColor: Colors.transparent,
       highlightColor: Colors.transparent,
       hoverColor: Colors.transparent,
-      onPressed: () {
-        Navigator.of(context).push(createRoute(ResultPage.id));
-      },
+      onPressed: onPress,
       child: Container(
         decoration: BoxDecoration(
           border: Border.all(

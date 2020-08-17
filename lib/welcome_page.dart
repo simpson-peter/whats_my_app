@@ -1,10 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:whats_my_app/constants.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:whats_my_app/widgets/next_button.dart';
+import 'package:whats_my_app/result_page.dart';
+import 'package:whats_my_app/widgets/welcome_content.dart';
 
-class WelcomePage extends StatelessWidget {
+class WelcomePage extends StatefulWidget {
   static String id = '/welcome';
+
+  @override
+  _WelcomePageState createState() => _WelcomePageState();
+}
+
+class _WelcomePageState extends State<WelcomePage> {
+  bool _inIntro = true;
+  Color useThis = Color(0xFFffba7a);
+
+  //Gets the page content to load based on whether the user is at the page entry
+  Widget getContent() {
+    if (_inIntro) {
+      return WelcomeContent(
+        onButtonPress: () {
+          setState(() {
+            setState(() {
+              _inIntro = false;
+            });
+          });
+        },
+      );
+    } else {
+      return ResultPage();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,27 +43,13 @@ class WelcomePage extends StatelessWidget {
             colors: [
               Color(0xFFfcddc0),
               Color(0xFFFFDAB9),
-              Color(0xFFffba7a),
+              useThis,
+              //Color(0xFFffba7a),
               Color(0xFFffc087),
             ],
           ),
         ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            TypewriterAnimatedTextKit(
-              speed: Duration(milliseconds: 200),
-              totalRepeatCount: 1,
-              text: ['What\'s My App, Bro?'],
-              textStyle: kDisplayTextStyle,
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            NextButton(label: 'Find Out'),
-          ],
-        ),
+        child: getContent(),
       ),
     );
   }

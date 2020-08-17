@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:whats_my_app/constants.dart';
 
 class ResultPage extends StatefulWidget {
   static String id = "/result";
@@ -7,14 +8,25 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
+  String getAppName() {
+    return 'This Name';
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Text(
-          'Hello',
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Text(
+          'Your App Is Named...',
+          style: kDisplayTextStyle,
         ),
-      ),
+        Text(
+          getAppName(),
+          style: kDisplayTextStyle,
+        )
+      ],
     );
   }
 }
