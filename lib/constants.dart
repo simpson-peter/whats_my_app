@@ -77,7 +77,7 @@ const List<String> kIntroPhrases = [
   'I went on a vision quest and came up with...',
   'Every VC this side of the Prime Meridian is talking about...',
   'What\'s up YouTube it\'s ReviewGuy1200 and I\'m here to talk about...',
-  'Seeking: Motivated CS student to develop my startup called',
+  'Seeking: Motivated CS student to develop my startup...',
   'We\'re about to completely rewrite the market paradigm with...',
   'Oh my god, did you found...',
   'BREAKING: Bill Gates retires from software, passes torch to the founders of...'

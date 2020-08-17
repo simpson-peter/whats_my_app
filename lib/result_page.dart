@@ -63,9 +63,12 @@ class _ResultPageState extends State<ResultPage> {
         SizedBox(
           height: 20,
         ),
-        Text(
-          getAppName(),
-          style: getTextStyle(),
+        Container(
+          height: 100,
+          child: Text(
+            getAppName(),
+            style: getTextStyle(),
+          ),
         ),
         SizedBox(
           height: 20,
