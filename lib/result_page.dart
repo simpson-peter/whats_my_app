@@ -2,10 +2,21 @@ import 'dart:math';
 
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:whats_my_app/constants.dart';
 import 'package:whats_my_app/widgets/next_button.dart';
 
 class ResultPage extends StatefulWidget {
+  //List of fonts to pull result name font from
+  static List<TextStyle> resultFonts = [
+    GoogleFonts.lobster(textStyle: kResultNameTextStyle),
+    GoogleFonts.righteous(textStyle: kResultNameTextStyle),
+    GoogleFonts.fredokaOne(textStyle: kResultNameTextStyle),
+    GoogleFonts.patuaOne(textStyle: kResultNameTextStyle),
+    GoogleFonts.baloo(textStyle: kResultNameTextStyle),
+    GoogleFonts.londrinaOutline(textStyle: kResultNameTextStyle),
+  ];
+
   static String id = "/result";
   final Function onButtonPress;
   ResultPage({@required this.onButtonPress});
@@ -22,6 +33,11 @@ class _ResultPageState extends State<ResultPage> {
     } else {
       return list[rand.nextInt(list.length)];
     }
+  }
+
+  //Returns a text style from the result font list, tagging it with the substyle
+  TextStyle getTextStyle() {
+    return getElementFromList(ResultPage.resultFonts);
   }
 
   //Returns the full app name to display
@@ -49,9 +65,7 @@ class _ResultPageState extends State<ResultPage> {
         ),
         Text(
           getAppName(),
-          style: kDisplayTextStyle.copyWith(
-            fontSize: 60,
-          ),
+          style: getTextStyle(),
         ),
         SizedBox(
           height: 20,
