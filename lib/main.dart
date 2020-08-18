@@ -7,11 +7,10 @@ import 'package:whats_my_app/site_data.dart';
 /*
 * TODO 's
 * TODO Implement "share on twitter" feature
-* TODO Implement catchy lead phrase generator ("see _blank_ at TechCrunch!")
-* TODO Randomly pull funny font for each name
-* TODO Transition to random cool background color on click
 * TODO Add a little 'made-by' corner
 * TODO Clean up animations after use
+* TODO fix non-instant font change on first result
+* TODO Fix always-orange background on fist result
  */
 
 void main() {

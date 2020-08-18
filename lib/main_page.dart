@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tinycolor/tinycolor.dart';
+import 'package:whats_my_app/constants.dart';
 import 'package:whats_my_app/result_page.dart';
 import 'package:whats_my_app/site_data.dart';
+import 'package:whats_my_app/widgets/Footer.dart';
 import 'package:whats_my_app/widgets/welcome_content.dart';
 
 class MainPage extends StatefulWidget {
@@ -31,6 +34,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       return ResultPage(
         onButtonPress: () {
           setState(() {
+            Provider.of<SiteData>(context, listen: false).setBackgroundColor(
+                ResultPage.getElementFromList(kBackgroundBaseColors));
             getContent(context);
           });
         },
@@ -46,6 +51,10 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       lowerBound: 0.0,
       upperBound: 1.0,
     );
+
+    //Tracks the background base color from which the gradient values are derived
+    TinyColor backgroundColor =
+        TinyColor(Provider.of<SiteData>(context).getBackgroundColor());
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -55,14 +64,19 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
             end: Alignment.topLeft,
             stops: [0.05, 0.1, 0.5, 1],
             colors: [
-              Color(0xFFfcddc0),
-              Color(0xFFFFDAB9),
-              Color(0xFFffba7a),
-              Color(0xFFffc087),
+              backgroundColor.lighten().lighten().color,
+              backgroundColor.lighten().color,
+              backgroundColor.color,
+              backgroundColor.darken().color,
             ],
           ),
         ),
-        child: getContent(context),
+        child: Column(
+          children: [
+            Expanded(child: getContent(context)),
+            Footer(),
+          ],
+        ),
       ),
     );
   }

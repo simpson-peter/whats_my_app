@@ -7,6 +7,16 @@ import 'package:whats_my_app/constants.dart';
 import 'package:whats_my_app/widgets/next_button.dart';
 
 class ResultPage extends StatefulWidget {
+  static Random rand = Random(DateTime.now().millisecondsSinceEpoch);
+  //Selects a random element of list with uniform likelihood
+  static dynamic getElementFromList(List list) {
+    if (list == null || list.length == 0) {
+      return "";
+    } else {
+      return list[rand.nextInt(list.length)];
+    }
+  }
+
   //List of fonts to pull result name font from
   static List<TextStyle> resultFonts = [
     GoogleFonts.lobster(textStyle: kResultNameTextStyle),
@@ -25,25 +35,15 @@ class ResultPage extends StatefulWidget {
 }
 
 class _ResultPageState extends State<ResultPage> {
-  final Random rand = Random(DateTime.now().millisecondsSinceEpoch);
-  //Selects a random element of list with uniform likelihood
-  dynamic getElementFromList(List list) {
-    if (list == null || list.length == 0) {
-      return "";
-    } else {
-      return list[rand.nextInt(list.length)];
-    }
-  }
-
   //Returns a text style from the result font list, tagging it with the substyle
   TextStyle getTextStyle() {
-    return getElementFromList(ResultPage.resultFonts);
+    return ResultPage.getElementFromList(ResultPage.resultFonts);
   }
 
   //Returns the full app name to display
   String getAppName() {
-    return getElementFromList(kFirstPhraseList) +
-        getElementFromList(kSecondPhraseList);
+    return ResultPage.getElementFromList(kFirstPhraseList) +
+        ResultPage.getElementFromList(kSecondPhraseList);
   }
 
   @override
@@ -53,7 +53,7 @@ class _ResultPageState extends State<ResultPage> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
-          '"' + getElementFromList(kIntroPhrases) + '"',
+          '"' + ResultPage.getElementFromList(kIntroPhrases) + '"',
           style: kDisplayTextStyle.copyWith(
             fontWeight: FontWeight.normal,
             fontStyle: FontStyle.italic,
@@ -73,6 +73,7 @@ class _ResultPageState extends State<ResultPage> {
         SizedBox(
           height: 20,
         ),
+        ShareDialog(),
         NextButton(
           label: 'Give Me Another!',
           onPress: widget.onButtonPress,

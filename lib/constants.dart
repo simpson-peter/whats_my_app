@@ -82,3 +82,16 @@ const List<String> kIntroPhrases = [
   'Oh my god, did you found...',
   'BREAKING: Bill Gates retires from software, passes torch to the founders of...'
 ];
+
+const List<Color> kBackgroundBaseColors = [
+  Color(0xFFffba7a),
+  Color(0xFF3f51b5),
+  Color(0xFFff4081),
+  Color(0xFF388e3c),
+  Color(0xFFf9a825),
+  Color(0xFF008374),
+  Color(0xFFfd5c63),
+  Colors.deepPurple,
+  Color(0xFF00aeff),
+  Color(0xFFa4c639),
+];
