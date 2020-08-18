@@ -16,7 +16,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
   //Tracks whether to display welcome (true) or results (false) content
-
   void initState() {
     super.initState();
   }
@@ -27,6 +26,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       return WelcomeContent(
         onButtonPress: () {
           setState(() {
+            Provider.of<SiteData>(context, listen: false).setBackgroundColor(
+                Util.getElementFromList(kBackgroundBaseColors));
             Provider.of<SiteData>(context, listen: false).setInIntro(false);
           });
         },
@@ -52,10 +53,9 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
       lowerBound: 0.0,
       upperBound: 1.0,
     );
-
     //Tracks the background base color from which the gradient values are derived
-    TinyColor backgroundColor =
-        TinyColor(Provider.of<SiteData>(context).getBackgroundColor());
+    TinyColor backgroundColor = TinyColor(
+        Provider.of<SiteData>(context, listen: false).getBackgroundColor());
     return Scaffold(
       body: Container(
         width: double.infinity,

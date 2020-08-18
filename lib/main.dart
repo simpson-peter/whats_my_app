@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:whats_my_app/result_page.dart';
 import 'package:whats_my_app/main_page.dart';
 import 'package:whats_my_app/site_data.dart';
 
@@ -10,8 +9,6 @@ import 'package:whats_my_app/site_data.dart';
 * TODO Add a little 'made-by' corner
 * TODO Clean up animations after use
 * TODO fix non-instant font change on first result
-* TODO Fix always-orange background on fist result
-* TODO Fix button alignment in Firefox
 * TODO Fix mobile proportions
  */
 
@@ -39,7 +36,6 @@ Route createRoute(String routeName) {
       var begin = Offset(0.0, 1.0);
       var end = Offset.zero;
       var tween = Tween(begin: begin, end: end);
-      var offsetAnimation = animation.drive(tween);
       return SlideTransition(
         position: animation.drive(tween),
         child: child,

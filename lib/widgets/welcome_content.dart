@@ -12,7 +12,7 @@ class WelcomeContent extends StatefulWidget {
 
   //Starts the button invisible so that it
 
-  WelcomeContent({@required this.onButtonPress}) {}
+  WelcomeContent({@required this.onButtonPress});
 
   @override
   _WelcomeContentState createState() => _WelcomeContentState();
@@ -25,7 +25,9 @@ class _WelcomeContentState extends State<WelcomeContent> {
   final bool showButtonVisible = false;
 
   @override
-  void initState() {}
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
