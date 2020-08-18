@@ -5,11 +5,8 @@ import 'package:whats_my_app/site_data.dart';
 
 /*
 * TODO 's
-* TODO Remove ellipsis in tweets. Add link to site.
-* TODO Add a little 'made-by' corner
 * TODO Clean up animations after use
 * TODO fix non-instant font change on first result
-* TODO Fix mobile proportions
  */
 
 void main() {

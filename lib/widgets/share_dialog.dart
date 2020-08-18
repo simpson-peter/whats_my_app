@@ -15,6 +15,7 @@ class ShareDialog extends StatelessWidget {
           Text(
             'Just what the world needed. One more trendy app idea.',
             style: kSubtitleTextStyle,
+            textAlign: TextAlign.center,
           ),
           SizedBox(
             height: 10,

@@ -77,6 +77,7 @@ class _ResultPageState extends State<ResultPage> {
             fontStyle: FontStyle.italic,
             fontSize: 25,
           ),
+          textAlign: TextAlign.center,
         ),
         SizedBox(
           height: 20,
