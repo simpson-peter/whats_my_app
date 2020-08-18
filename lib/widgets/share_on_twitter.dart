@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:platform_detect/platform_detect.dart';
 
 //Shows the 'Share On Twitter' Button and redirects you to a custom tweet when clicked
 class ShareOnTwitter extends StatelessWidget {
@@ -15,7 +16,7 @@ class ShareOnTwitter extends StatelessWidget {
       hoverColor: Colors.transparent,
       onPressed: onTweet,
       child: Container(
-        width: 170,
+        width: browser.isFirefox ? 185 : 170,
         decoration: BoxDecoration(
           color: Colors.transparent,
           border: Border.all(

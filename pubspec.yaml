@@ -17,6 +17,7 @@ dependencies:
   tinycolor: ^1.0.2
   universal_html: ^1.2.1
   font_awesome_flutter: ^8.8.1
+  platform_detect: ^1.4.0
 
 dev_dependencies:
   flutter_test:
@@ -49,15 +50,15 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
   #   - family: OpenSans
   #     fonts:
   #       - asset: fonts/OpenSans-Regular.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
-  #   - family: Trajan Pro
-  #     fonts:
-  #       - asset: fonts/TrajanPro.ttf
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto/Roboto-Regular.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

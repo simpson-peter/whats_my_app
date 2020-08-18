@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:platform_detect/platform_detect.dart';
 import 'package:whats_my_app/constants.dart';
 
 class NextButton extends StatelessWidget {
   final String label;
   final Function onPress;
   final double opacity;
-  NextButton({@required this.label, @required this.onPress, this.opacity = 1});
+  //Tracks whether the button needs to be extra-extended for firefox due to font load flicker
+  final bool longText;
+  NextButton(
+      {@required this.label,
+      @required this.onPress,
+      this.opacity = 1,
+      this.longText = false});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +29,11 @@ class NextButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: EdgeInsets.all(8),
+          padding: browser.isFirefox
+              ? (longText
+                  ? EdgeInsets.fromLTRB(8, 8, 22, 8)
+                  : EdgeInsets.fromLTRB(8, 8, 15, 8))
+              : EdgeInsets.fromLTRB(8, 8, 8, 8),
           child: Text(
             label,
             style: kDisplayTextStyle.copyWith(
