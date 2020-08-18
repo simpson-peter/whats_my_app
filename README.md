@@ -1,7 +1,7 @@
 # What's My App
 What's My App serves you dumb app names all day long.
 
-It was created by [Peter Simpson](petersimpson.me) using Flutter Web. Any resemblance to real-life apps is purely coincidental, but feel free to take a name if you like.
+It's a single-serving website created by [Peter Simpson](petersimpson.me) using Flutter Web. Any resemblance to real-life apps is entirely coincidental, but feel free to take a name if you like.
 
 ## Design
 What's My App is implemented in Dart and utilizes the Flutter framework's web functionality.
