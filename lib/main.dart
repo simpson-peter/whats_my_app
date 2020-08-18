@@ -11,6 +11,7 @@ import 'package:whats_my_app/site_data.dart';
 * TODO Clean up animations after use
 * TODO fix non-instant font change on first result
 * TODO Fix always-orange background on fist result
+* TODO Fix button alignment in Firefox
  */
 
 void main() {

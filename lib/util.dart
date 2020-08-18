@@ -24,6 +24,9 @@ class Util {
   static String convertToURLForm(String toConvert) {
     toConvert.replaceAll(' ', '%20');
     toConvert.replaceAll('\'', '%27');
+    toConvert.replaceAll('.', '');
+    toConvert.replaceAll(',', '%2C');
+    toConvert.replaceAll(':', '');
     return toConvert;
   }
 }
