@@ -55,13 +55,8 @@ class _WelcomeContentState extends State<WelcomeContent> {
           FadeTransition(
             opacity: animation,
             child: Text(
-              '"Dude, I\'m offering you a chance to get in on the ground floor..."',
-              style: welcomeTextStyle.copyWith(
-                fontWeight: FontWeight.w100,
-                fontSize: 20,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
+                '"Dude, I\'m offering you a chance to get in on the ground floor..."',
+                style: kSubtitleTextStyle),
           ),
           SizedBox(
             height: 20,

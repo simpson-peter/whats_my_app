@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:whats_my_app/constants.dart';
 import 'package:whats_my_app/widgets/next_button.dart';
+import 'package:whats_my_app/widgets/share_dialog.dart';
 
 class ResultPage extends StatefulWidget {
   static Random rand = Random(DateTime.now().millisecondsSinceEpoch);
@@ -71,9 +72,12 @@ class _ResultPageState extends State<ResultPage> {
           ),
         ),
         SizedBox(
-          height: 20,
+          height: 40,
         ),
         ShareDialog(),
+        SizedBox(
+          height: 10,
+        ),
         NextButton(
           label: 'Give Me Another!',
           onPress: widget.onButtonPress,

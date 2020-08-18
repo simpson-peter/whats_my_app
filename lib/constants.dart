@@ -7,6 +7,13 @@ const TextStyle kDisplayTextStyle = TextStyle(
   fontWeight: FontWeight.w700,
 );
 
+const TextStyle kSubtitleTextStyle = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.w100,
+  fontSize: 20,
+  fontStyle: FontStyle.italic,
+);
+
 const List<List<Color>> kBackgroundColors = [
   [],
   [],
