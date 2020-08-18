@@ -4,7 +4,8 @@ import 'package:tinycolor/tinycolor.dart';
 import 'package:whats_my_app/constants.dart';
 import 'package:whats_my_app/result_page.dart';
 import 'package:whats_my_app/site_data.dart';
-import 'package:whats_my_app/widgets/Footer.dart';
+import 'package:whats_my_app/util.dart';
+import 'package:whats_my_app/widgets/footer.dart';
 import 'package:whats_my_app/widgets/welcome_content.dart';
 
 class MainPage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
         onButtonPress: () {
           setState(() {
             Provider.of<SiteData>(context, listen: false).setBackgroundColor(
-                ResultPage.getElementFromList(kBackgroundBaseColors));
+                Util.getElementFromList(kBackgroundBaseColors));
             getContent(context);
           });
         },

@@ -73,7 +73,6 @@ const List<String> kSecondPhraseList = [
   'dex',
   'ezza',
   'dur',
-  '',
 ];
 
 const List<String> kIntroPhrases = [
@@ -99,6 +98,6 @@ const List<Color> kBackgroundBaseColors = [
   Color(0xFF008374),
   Color(0xFFfd5c63),
   Colors.deepPurple,
-  Color(0xFF00aeff),
+  Colors.teal,
   Color(0xFFa4c639),
 ];

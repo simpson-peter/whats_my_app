@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:whats_my_app/constants.dart';
-import 'package:universal_html/html.dart' as html;
+
+import '../util.dart';
 
 //Displays author and info information at the bottom site
 class Footer extends StatelessWidget {
-  void goToLink(String url) {
-    html.window.open(url, '_blank');
-  }
-
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(bottom: 5, left: 5),
+      padding: const EdgeInsets.only(left: 15),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          GestureDetector(
+          MaterialButton(
+            padding: EdgeInsets.all(0),
+            splashColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            hoverColor: Colors.transparent,
             child: Text(
               'Made by Peter Simpson',
               style: kDisplayTextStyle.copyWith(
@@ -23,8 +24,8 @@ class Footer extends StatelessWidget {
                 fontWeight: FontWeight.w300,
               ),
             ),
-            onTap: () {
-              goToLink("https://petersimpson.me");
+            onPressed: () {
+              Util.goToLink("https://petersimpson.me");
             },
           ),
         ],
