@@ -6,12 +6,13 @@ import 'package:whats_my_app/site_data.dart';
 
 /*
 * TODO 's
-* TODO Implement "share on twitter" feature
+* TODO Remove ellipsis in tweets. Add link to site.
 * TODO Add a little 'made-by' corner
 * TODO Clean up animations after use
 * TODO fix non-instant font change on first result
 * TODO Fix always-orange background on fist result
 * TODO Fix button alignment in Firefox
+* TODO Fix mobile proportions
  */
 
 void main() {
