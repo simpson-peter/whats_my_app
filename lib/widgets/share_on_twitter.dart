@@ -16,7 +16,7 @@ class ShareOnTwitter extends StatelessWidget {
       hoverColor: Colors.transparent,
       onPressed: onTweet,
       child: Container(
-        width: browser.isFirefox ? 185 : 170,
+        width: browser.isFirefox ? 175 : 170,
         decoration: BoxDecoration(
           color: Colors.transparent,
           border: Border.all(
@@ -37,7 +37,7 @@ class ShareOnTwitter extends StatelessWidget {
                   color: Color(0xFF00acee),
                 ),
                 SizedBox(
-                  width: 7,
+                  width: browser.isFirefox ? 3 : 7,
                 ),
                 Text(
                   'Share on Twitter',
