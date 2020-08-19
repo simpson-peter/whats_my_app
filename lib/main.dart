@@ -7,6 +7,7 @@ import 'package:whats_my_app/site_data.dart';
 * TODO 's
 * TODO Clean up animations after use
 * TODO fix non-instant font change on first result
+* TODO Animate site title to float to top after going to results
  */
 
 void main() {

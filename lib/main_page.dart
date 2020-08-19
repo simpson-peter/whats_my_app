@@ -7,6 +7,7 @@ import 'package:whats_my_app/site_data.dart';
 import 'package:whats_my_app/util.dart';
 import 'package:whats_my_app/widgets/footer.dart';
 import 'package:whats_my_app/widgets/welcome_content.dart';
+import 'package:whats_my_app/widgets/wma_title.dart';
 
 class MainPage extends StatefulWidget {
   static String id = '/welcome';
@@ -73,8 +74,18 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
           ),
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(child: getContent(context)),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  WMATitle(),
+                  getContent(context),
+                ],
+              ),
+            ),
             Footer(),
           ],
         ),

@@ -31,11 +31,12 @@ class NextButton extends StatelessWidget {
         child: Padding(
           padding: browser.isFirefox
               ? (longText
-                  ? EdgeInsets.fromLTRB(8, 8, 22, 8)
-                  : EdgeInsets.fromLTRB(8, 8, 15, 8))
+                  ? EdgeInsets.fromLTRB(8, 8, 8, 8)
+                  : EdgeInsets.fromLTRB(8, 8, 8, 8))
               : EdgeInsets.fromLTRB(8, 8, 8, 8),
           child: Text(
             label,
+            textAlign: TextAlign.center,
             style: kDisplayTextStyle.copyWith(
               fontSize: 20,
               fontWeight: FontWeight.w300,

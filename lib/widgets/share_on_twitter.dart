@@ -16,7 +16,7 @@ class ShareOnTwitter extends StatelessWidget {
       hoverColor: Colors.transparent,
       onPressed: onTweet,
       child: Container(
-        width: browser.isFirefox ? 185 : 173,
+        width: browser.isFirefox ? 185 : 170,
         decoration: BoxDecoration(
           color: Colors.transparent,
           border: Border.all(
@@ -27,7 +27,7 @@ class ShareOnTwitter extends StatelessWidget {
         child: Column(
           children: [
             SizedBox(
-              height: 9,
+              height: 7,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -49,7 +49,7 @@ class ShareOnTwitter extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 9,
+              height: 7,
             ),
           ],
         ),
